@@ -1,18 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Calculadora
 {
@@ -21,7 +9,11 @@ namespace Calculadora
     /// </summary>
     public partial class MainWindow : Window
     {
-        decimal valor1 = 0, valor2 = 0;
+        //  Variaveis para guardar os dados.
+        decimal valor1 = 0,
+                valor2 = 0;
+
+        // Variavel para ter o controle das operações.
         string operacao1 = "";
 
         public MainWindow()
@@ -67,7 +59,7 @@ namespace Calculadora
         private void Button_Click_7(object sender, RoutedEventArgs e)
         {
             Resultado.Text += "7";
-            
+
         }
 
         private void Button_Click_8(object sender, RoutedEventArgs e)
@@ -87,6 +79,7 @@ namespace Calculadora
 
         private void Button_Click_11(object sender, RoutedEventArgs e)
         {
+            // Verificação se o usuário não está tentando fazer uma operação sem dados.
             if (Resultado.Text != "")
             {
                 valor1 = Decimal.Parse(Resultado.Text, CultureInfo.InvariantCulture);
@@ -97,6 +90,7 @@ namespace Calculadora
 
         private void Button_Click_12(object sender, RoutedEventArgs e)
         {
+            // Verificação se o usuário não está tentando fazer uma operação sem dados.
             if (Resultado.Text != "")
             {
                 valor1 = Decimal.Parse(Resultado.Text, CultureInfo.InvariantCulture);
@@ -108,6 +102,7 @@ namespace Calculadora
 
         private void Button_Click_13(object sender, RoutedEventArgs e)
         {
+            // Verificação se o usuário não está tentando fazer uma operação sem dados.
             if (Resultado.Text != "")
             {
                 valor1 = Decimal.Parse(Resultado.Text, CultureInfo.InvariantCulture);
@@ -121,7 +116,8 @@ namespace Calculadora
         {
             valor2 = Decimal.Parse(Resultado.Text, CultureInfo.InvariantCulture);
 
-            if(operacao1 == "SOMA")
+            // Verificações de quais operações devem ser efetuadas.
+            if (operacao1 == "SOMA")
             {
                 Resultado.Text = Convert.ToString(valor1 + valor2);
             }
@@ -157,6 +153,7 @@ namespace Calculadora
 
         private void Button_Click_14(object sender, RoutedEventArgs e)
         {
+            // Verificação se o usuário não está tentando fazer uma operação sem dados.
             if (Resultado.Text != "")
             {
                 valor1 = Decimal.Parse(Resultado.Text, CultureInfo.InvariantCulture);
